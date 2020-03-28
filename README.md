@@ -1,2 +1,2 @@
 # Probability Simulation
-This little project flips some coins and rolls some dice and analyzes the results.
+This little project flips some coins, rolls some dice, and draws some cards and analyzes the results afterwards.
