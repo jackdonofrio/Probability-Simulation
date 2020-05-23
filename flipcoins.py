@@ -1,10 +1,9 @@
-import random
 from decimal import Decimal
 from matplotlib import pyplot as plt
+import random
 
-# This program simultes flipping coins.
-# coins[0] = heads, coins[1] = tails
-results = [0, 0]
+# This program simulates flipping coins.
+results = [0, 0] # [0] = heads, [1] = tails
 faces = ["Heads", "Tails"]
 coins = eval(input("\nEnter how many coins you will flip: "))
 print(f"Flipping {coins} coins...\n")
@@ -28,6 +27,8 @@ plt.title(f"Results of Flipping {coins} Coins")
 plt.show()
 
 print("Analysis: ")
-print(f"{results[0]} flips yielded Heads. {results[1]} flips yielded Tails.")
-print(f"The probability that {coins} heads in a row will occur is: "\
+heads_percentage = sci_notation(results[0] / (results[0] + results[1]) * 100)
+print(f"{results[0]} flips yielded Heads. {results[1]} flips yielded Tails. This means ", end = "")
+print(f"{float(heads_percentage)} % landed heads, while {100 - float(heads_percentage)} % landed tails")
+print(f"The probability that {coins} flips will result in heads in a row is: "\
      f"1 in {sci_notation(pow(2, coins))} or {sci_notation((1 / pow(2, coins)) * 100)} %.")
